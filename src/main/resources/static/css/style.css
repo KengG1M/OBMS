@@ -15,3 +15,27 @@
 .bg-red {
     background-color: #dc3545; /* Bootstrap red */
 }
+
+.bg-cream {
+	background-color: #F9EADB !important;
+}
+
+.btn-red {
+	background-color: #dc3545; 
+	color: #ffffff; 
+  }
+  
+  .btn-red:hover {
+	background-color: #F9EADB;
+	color: #000000; 
+  }
+
+.red-radio:checked {
+    background-color: #dc3545; 
+    border-color: #dc3545; 
+}
+
+
+.red-radio:checked + .form-check-label {
+    color: #dc3545;
+}

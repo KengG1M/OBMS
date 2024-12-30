@@ -48,11 +48,11 @@
 								<td>[[${u.address+','+u.city+','+u.state+','+u.pincode}]]</td>
 								<td>[[${u.isEnable}]]</td>
 								<td><a th:href="@{'/admin/updateSts?status=true&id='+${u.id}}+'&type='+${userType}"
-									class="btn btn-sm btn-primary">Active</a> 
+									class="btn btn-red">Active</a> 
 										
 									<a
 									th:href="@{'/admin/updateSts?status=false&id='+${u.id}}+'&type='+${userType}"
-									class="btn btn-sm btn-danger">
+									class="btn btn-red">
 										Inactive</a></td>
 							</tr>
 
