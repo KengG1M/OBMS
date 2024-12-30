@@ -11,3 +11,7 @@
 .error {
 	color: red;
 }
+
+.bg-red {
+    background-color: #dc3545; /* Bootstrap red */
+}
