@@ -39,3 +39,24 @@
 .red-radio:checked + .form-check-label {
     color: #dc3545;
 }
+
+.font-pacifico{
+	font-family: 'Pacifico', cursive;
+    color: #d87f4b;
+}
+
+.fc-maincolor{
+	color: #F2360A;
+}
+
+.fc-subcolor{
+	color: #E58829;
+}
+.fc-red{
+	color: red;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+	font-weight: 500;
+}
