@@ -8,7 +8,7 @@
 <body>
 	<section>
 	
-		<div class="container-fluid bg-primary p-4 mt-5 ">
+		<div class="container-fluid bg-primary p-4 mt-5 bg-cream">
 			<div class="row">
 				<div class="col-md-8 offset-md-2">
 					<form action="/products" method="get">
@@ -36,8 +36,8 @@
 								<p class="fs-5">Category</p>
 								<a href="/products"
 									th:classappend="${paramValue==''} ? 'active':''"
-									class="list-group-item list-group-item-action"
-									aria-current="true"> All </a> <a th:each="c:${categories}"
+									class="list-group-item list-group-item-action active bg-red" aria-current="true" style="background-color: #dc3545;"> All </a>
+ 									<a th:each="c:${categories}"
 									th:href="@{'/products?category='+${c.name}}"
 									th:classappend="${paramValue == c.name} ? 'active':''"
 									class="list-group-item list-group-item-action">[[${c.name}]]</a>
@@ -115,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-
+	<br><br>
 	</section>
 </body>
 </html>
