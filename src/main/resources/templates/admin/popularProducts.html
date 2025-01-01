@@ -23,7 +23,7 @@
                     <th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
                 </th:block>
                 
-                <div class="col-md-12 p-10">
+                <div class="col-md-12 p-4">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -38,22 +38,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="productData, c : ${popularProducts}">
-                                <th scope="row">[[${c.count + 1}]]</th> <!-- Index or count for the row -->
-                                <td><img th:src="@{'/img/product_img/'+${productData[0].image}}"
-                                    width="70px" height="70px"></td>
-                                <td>[[${productData[0].title}]]</td>
-                                <td>[[${productData[0].category}]]</td>
-                                <td>[[${productData[0].price}]]</td>
-                                <td>[[${productData[0].isActive}]]</td>
-                                <td>[[${productData[0].stock}]]</td>
-                                <td>[[${productData[1]}]]</td> <!-- Order count -->
+                            <tr th:each="p,c:${products}">
+								<th scope="row">[[${c.count}]]</th>
+								<td><img th:src="@{'/img/product_img/'+${p.image}}"
+									width="70px" height="70px"></td>
+								<td>[[${p.title}]]</td>
+								<td>[[${p.category}]]</td>
+								<td>[[${p.price}]]</td>
+
+								<td>[[${p.isActive}]]</td>
+								<td>[[${p.stock}]]</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+	<br><br><br><br><br>
     </section>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.ecom.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -31,4 +32,6 @@ public interface ProductService {
 
 	public Page<Product> searchActiveProductPagination(Integer pageNo, Integer pageSize, String category, String ch);
 
+	public List<Product> getPopularProducts(LocalDateTime startDate, LocalDateTime endDate);
 }
+
