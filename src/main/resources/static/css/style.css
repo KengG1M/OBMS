@@ -30,14 +30,69 @@
 	color: #000000; 
   }
 
+.btn-maincolor {
+	background-color: #F2360A; 
+	color: #ffffff; 
+	width: 100%;
+	height: 60px;
+	padding: 10px 20px;
+	font-size: 22px;
+	font-weight:100;
+	border-radius: 1px;
+	border-width: 1px;
+}
+  
+.btn-maincolor:hover {
+	background-color: #ffffff;
+	color: #000000; 
+}
+
+.btn-subcolor {
+	background-color: #f7ede49d; 
+	color: black; 
+	width: 50%;
+	height: 45px;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 100;
+	border-radius: 1px;
+	border-width: 1px;
+}
+  
+.btn-subcolor:hover {
+	background-color: #ffffff;
+	color: #000000; 
+}
+
+.form-control {
+	border: 2px solid black; /* Thay đổi màu viền */
+	border-radius: 1px; /* Bo góc */
+	border-width: 1px;
+	padding: 15px; /* Thêm padding bên trong ô nhập liệu */
+	font-size: 1rem; /* Thay đổi kích thước font chữ */
+	background-color: #f9f9f9; /* Thay đổi màu nền */
+  }
+  
+  .form-control:focus {
+	border-color: black; /* Màu viền khi ô nhập liệu được chọn (focus) */
+	box-shadow: 0 0 5px gray; /* Thêm hiệu ứng bóng đổ khi focus */
+  }
+  
 .red-radio:checked {
     background-color: #dc3545; 
     border-color: #dc3545; 
 }
 
-
 .red-radio:checked + .form-check-label {
     color: #dc3545;
+}
+
+.bg-maincolor{
+	color: #F2360A;
+}
+
+.bg-subcolor{
+	color: #E58829;
 }
 
 .font-pacifico{
@@ -52,11 +107,37 @@
 .fc-subcolor{
 	color: #E58829;
 }
+
 .fc-red{
 	color: red;
+}
+
+.text-link{
+	color: black;
+	text-decoration: none;
+}
+
+.text-link:hover{
+	color: #E58829;
+	text-decoration: underline;
+}
+
+.fs-note{
+	color:darkgray;
+	font-size:14px;
 }
 
 body {
     font-family: 'Lato', sans-serif;
 	font-weight: 500;
+}
+
+.card-header {
+	background-color: #f8f9fa; /* Đặt màu nền là trắng */
+	color: #000; /* Nếu muốn thay đổi màu chữ, có thể thêm dòng này */
+}
+  
+.card-footer {
+	background-color: #f8f9fa; /* Đặt màu nền là trắng */
+	color: #000; /* Nếu muốn thay đổi màu chữ, có thể thêm dòng này */
 }
