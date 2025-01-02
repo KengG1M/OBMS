@@ -57,6 +57,17 @@
 									</li>
 								</ul>
 							</div>                            
+<!-- main  -->
+<!-- 								<p class="fs-5">Category</p>
+								<a href="/products"
+									th:classappend="${paramValue==''} ? 'active':''"
+									class="list-group-item list-group-item-action active bg-red" aria-current="true" style="background-color: #dc3545;"> All </a>
+ 									<a th:each="c:${categories}"
+									th:href="@{'/products?category='+${c.name}}"
+									th:classappend="${paramValue == c.name} ? 'active':''"
+									class="list-group-item list-group-item-action">[[${c.name}]]</a>
+							</div> -->
+<!-- >>>>>>> main -->
 						</div>
 					</div>
 				</div>
@@ -121,7 +132,7 @@
 				</div>
 			</div>			
 		</div>
-
+	<br><br>
 	</section>
 </body>
 </html>

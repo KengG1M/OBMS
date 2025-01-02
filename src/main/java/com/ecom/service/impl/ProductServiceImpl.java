@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -17,6 +19,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom.model.Product;
+import com.ecom.repository.OrderRepository;
 import com.ecom.repository.ProductRepository;
 import com.ecom.service.ProductService;
 
@@ -155,5 +158,16 @@ public class ProductServiceImpl implements ProductService {
 //		}
 		return pageProduct;
 	}
+
+	@Autowired
+    private OrderRepository orderRepository;
+	@Override
+    public List<Product> getPopularProducts(LocalDateTime startDate, LocalDateTime endDate) {
+        List<Object[]> result = orderRepository.findPopularProducts(startDate, endDate);
+
+        return result.stream()
+                     .map(obj -> (Product) obj[0]) 
+                     .collect(Collectors.toList());
+    }
 
 }

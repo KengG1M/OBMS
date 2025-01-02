@@ -3,7 +3,7 @@
 	th:replace="~{base::layout(~{::section})}">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>BakeOnl</title>
 </head>
 <body>
 	<section>
@@ -12,7 +12,7 @@
 				<div class="col-md-6 offset-md-3">
 					<div class="card card-sh">
 						<div class="card-header text-center ">
-							<p class="fs-4">Add Product</p>
+							<h4 class="fs-4">Add Product</h4>
 
 							<th:block th:if="${session.succMsg}">
 								<p class="text-success fw-bold">[[${session.succMsg}]]</p>
@@ -55,13 +55,13 @@
 									<label>Status</label>
 
 									<div class="form-check">
-										<input class="form-check-input" type="radio" checked
+										<input class="form-check-input red-radio" type="radio" checked
 											value="true" name="isActive" id="flexRadioDefault1">
 										<label class="form-check-label" for="flexRadioDefault1">
 											Active </label>
 									</div>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="isActive"
+										<input class="form-check-input red-radio" type="radio" name="isActive"
 											value="false" id="flexRadioDefault2"> <label
 											class="form-check-label" for="flexRadioDefault2">
 											Inactive </label>
@@ -80,7 +80,9 @@
 											class="form-control">
 									</div>
 								</div>
-								<button class="btn btn-primary col-md-12">Submit</button>
+								<button class="btn btn-red col-md-12">Submit</button>
+								<br><br><br>
+								<a href="/admin/products" class="btn btn-red col-md-4">View list of products</a>
 							</form>
 						</div>
 					</div>
