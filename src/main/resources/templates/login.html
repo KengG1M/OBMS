@@ -26,7 +26,7 @@
 
 						<!-- Header  -->
 						<div class="card-header mx-5">
-							<p class="fs-1 text-center m-2">Sign In</p>
+							<p class="fs-1 text-center m-2">Log In</p>
 							<div th:if="${param.error}"
 								class="alert alert-danger text-center">
 								<th:block
@@ -67,36 +67,16 @@
 										class="form-control" name="password" type="password">
 								</div>
 								<a href="/forgot-password" class="text-link fs-note text-end float-end">Forgot your password?</a>
+								<br><br>
 								<button type="submit"
-<<<<<<< HEAD
-									class="btn bg-red text-white col-md-12">Login
-=======
-									class="btn-maincolor col-md-12 mt-3 mb-3">LOG IN
->>>>>>> 06b0169df53cd9f996d9f1cf86a032601599435a
-								</button>
+									class="btn bg-red text-white col-md-12">Login</button>
 							</form>
 						</div>
-
-<<<<<<< HEAD
-						<div class="card-footer text-center">
-							<a href="/forgot-password" class="text-decoration-none" style="color: #F2360A;">Forgot Password</a><br>
-							Don't have an account ? <a href="#" class="text-decoration-none" style="color: #F2360A;">Create one</a>
-=======
-						<!-- Footer -->
-						<div class="card-footer text-center mx-5 mb-2">
-		
-							<div class="mt-2 mb-2">
-								NO ACCOUNT YET?
-							</div>
-							<button class="btn-subcolor mb-2" onclick="window.location.href='/register'">CREATE ONE</button>
-
-							<!-- <a href="/register" class="text-link">Create one </a> -->
-							
->>>>>>> 06b0169df53cd9f996d9f1cf86a032601599435a
-						</div> 
-
-						
+						<br><br>
+						<div class="text-center">Don't have an account ? 
+							<a href="#" class="text-decoration-none" style="color: #F2360A;">Create one</a>
 					</div>
+					<br>
 				</div>
 			</div>
 		</div>

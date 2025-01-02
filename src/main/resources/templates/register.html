@@ -17,7 +17,7 @@
 
 						<!-- Header Card -->
 						<div class="card-header text-center">
-							<p class="fs-4 text-center">Register</p>
+							<p class="fs-4 text-center">Sign Up</p>
 							<th:block th:if="${session.succMsg}">
 								<p class="text-success fw-bold">[[${session.succMsg}]]</p>
 								<th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
@@ -100,26 +100,17 @@
 									<label class="form-label">Profile Image</label> <input
 										class="form-control" name="img" type="file">
 								</div>
-
-
-
-
-
-
-								<button type="submit"
-									class="btn bg-red text-white col-md-12">Register</button>
 							</form>
 						</div>
-
-						<!-- Footer Card  -->
-						<div class="card-footer text-center">
-<<<<<<< HEAD
-
-							have an account ? <a href="/login" class="text-decoration-none" style="color: #F2360A;">Login
-=======
-							Already have an account? <a href="/signin" class="text-decoration-underline">Sign In
->>>>>>> 06b0169df53cd9f996d9f1cf86a032601599435a
-							</a>
+						<br>
+						<button type="submit"
+						class="btn bg-red text-white col-md-12">Sign Up</button>
+						<br><br>
+						<div class="text-center">Already have an account ?
+							<a href="/login" class="text-decoration-none" style="color: #dc3545;">Login</a>
+						</div>
+						
+				</form>
 						</div>
 					</div>
 				</div>
