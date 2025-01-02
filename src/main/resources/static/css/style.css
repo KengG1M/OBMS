@@ -141,3 +141,57 @@ body {
 	background-color: #f8f9fa; /* Đặt màu nền là trắng */
 	color: #000; /* Nếu muốn thay đổi màu chữ, có thể thêm dòng này */
 }
+
+/* Offcanvas from the left (default) */
+.offcanvas.offcanvas-start {
+    position: fixed;
+    top: 1000;
+    left: 1000;
+    width: 100;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper{
+    max-width: 100%;
+    height: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 20px;
+}
+img{
+	max-width:100%;
+	max-height:100%;
+}
+@media screen and (min-width:576px){
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%/3);
+    }
+}
+
+.carousel-inner{
+    padding: 1em;
+}
+.card{
+    margin: 0 .5em;
+}
+
+.custom-link {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
+.custom-link:hover,
+.custom-link:focus,
+.custom-link:active {
+    outline: none; /* Remove the focus outline */
+    color: inherit; /* Maintain the color on interaction */
+    text-decoration: none; /* Maintain no underline */
+}
