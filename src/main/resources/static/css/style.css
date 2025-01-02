@@ -54,5 +54,17 @@ img{
     margin: 0 .5em;
 }
 
+.custom-link {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
+.custom-link:hover,
+.custom-link:focus,
+.custom-link:active {
+    outline: none; /* Remove the focus outline */
+    color: inherit; /* Maintain the color on interaction */
+    text-decoration: none; /* Maintain no underline */
+}
 
 
