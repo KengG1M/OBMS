@@ -13,7 +13,7 @@
 }
 
 .bg-red {
-    background-color: #dc3545; /* Bootstrap red */
+    background-color: #F2360A; /* Bootstrap red */
 }
 
 .bg-cream {
@@ -21,7 +21,7 @@
 }
 
 .btn-red {
-	background-color: #dc3545; 
+	background-color: #F2360A; 
 	color: #ffffff; 
   }
   
@@ -31,13 +31,13 @@
   }
 
 .red-radio:checked {
-    background-color: #dc3545; 
-    border-color: #dc3545; 
+    background-color: #F2360A; 
+    border-color: #F2360A; 
 }
 
 
 .red-radio:checked + .form-check-label {
-    color: #dc3545;
+    color: #F2360A;
 }
 
 .font-pacifico{
@@ -53,7 +53,7 @@
 	color: #E58829;
 }
 .fc-red{
-	color: red;
+	color: #F2360A;
 }
 
 body {
