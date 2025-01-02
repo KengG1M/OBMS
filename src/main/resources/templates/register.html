@@ -14,6 +14,8 @@
 				</div>
 				<div class="col-md-7 p-2">
 					<div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+
+						<!-- Header Card -->
 						<div class="card-header text-center">
 							<p class="fs-4 text-center">Register</p>
 							<th:block th:if="${session.succMsg}">
@@ -26,6 +28,8 @@
 								<th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
 							</th:block>
 						</div>
+
+						<!-- Body Card  -->
 						<div class="card-body">
 							<form action="/saveUser" enctype="multipart/form-data" id="userRegister" novalidate
 								method="post">
@@ -107,9 +111,14 @@
 							</form>
 						</div>
 
+						<!-- Footer Card  -->
 						<div class="card-footer text-center">
+<<<<<<< HEAD
 
 							have an account ? <a href="/login" class="text-decoration-none" style="color: #F2360A;">Login
+=======
+							Already have an account? <a href="/signin" class="text-decoration-underline">Sign In
+>>>>>>> 06b0169df53cd9f996d9f1cf86a032601599435a
 							</a>
 						</div>
 					</div>
