@@ -7,131 +7,162 @@
 
 </head>
 <body >
-	<section>
-			 
-		<div class="row mt-5 ">
-			<!--< Start Category Module -->
-			<div class="col-2 mt-5 ">
-                <!-- Category Navigation Start -->
-				<div class="card-fluid border border-2 border-start-0 rounded-5 rounded-start-0 ms-4" style="height: 100%;">
-					<!-- Offcanvas for Categories -->
-					<div class="card-body offcanvas-start " tabindex="-1">
-						<div class="pb-3 border-bottom border-2">
-							<h5 class="fs-h1 pt-3 mb-0 d-inline-block align-middle">
-								<i class="fa-solid fa-list" style="color: #888; vertical-align: auto;"></i>
-								<b style="position: relative; left: 50%; font-family: 'Playfair Display', serif;">Category</b>
-							</h5>
-						</div>
+	
+	<section class="container" style="height: 100vh;">
+		<div class="d-flex flex-column pt-5" style="height: 100%;">
+
+			<div class="card-navspace">
+
+			</div>
+			<!-- chữ chính và hình chính ở giữa  -->
+			<div class="card-main-homepage p-3 d-flex">
+				<div class="row">
+					<div class="col-md-7">
+						<br>
 						<div class="">
-							<ul class="list-group list-group-flush">
-								<!-- Loop through every category -->
-								<li class="list-group-item" th:each="c:${category}" >
-									<span class="pt-1 form-checked-content icon-link">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
-											<path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
-										</svg>										
-										<a class="custom-link" th:text="${c.name}" th:href="@{'/products?category=' + ${c.name}}" style="font-weight: bold;"></a>  <!-- This will insert the category name -->
-									</span>
-									
-									<ul class="px-4 border-start ms-2" style="list-style-type: none;">
-										<!-- Loop through products within the category -->
-										<li th:each="p : ${products}" 
-											th:if="${p.category == c.name}">
-											<a class="custom-link" th:text="${p.title}"  th:href="@{'/product/'+${p.id}}"></a>
-										</li>
-									</ul>									
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-            </div>
-			<!-- End Category Module -->
-
-			<!-- Start Product Module -->
-			<div class="col mt-5">
-				<!-- Search Bar -->
-				<form action="/products" method="get" role="search" style="position: relative;" class="d-flex justify-content-center">
-					<div class="search-container" 
-						style="position: relative; width:100%; display: flex;justify-content: center;">
-						<input class="form-control rounded-pill p-3 m-3 w-75"
-							   name="ch"
-							   type="search" 
-							   placeholder="Search"
-							   aria-label="Search"
-							   style="background: #e6e6e6; padding-left: 40px; text-indent: 40px;"> <!-- Added padding-left to create space for the icon -->
-						<i class="fas fa-search"
-						   style="position: relative; right: 74%; top:90%; transform: translateY(-50%); color: #888;">
-						</i>
-					</div>
-				</form>
-				<!-- End of Search Bar -->
-
-				<!-- Item Carousel -->
-				<div class="container rounded-4 mt-5" style="background:#FFF6EC" th:each="c:${category}">
-					<!-- Tittle -->
-					<div style="display: flex; align-items: center;">
-						<img src="/img/cakeIcon.png" alt="" style="margin-right: 10px;"> <!-- Adjust margin for spacing -->
-						<h1 class="card-title pb-3 pt-3 ps-3" th:href="@{'/products?category=' + ${c.name}}"
-							style="font-family: 'Playfair Display', serif; margin-bottom: 0;">
-							[[${c.name}]]
-						</h1>
-					</div>					
-					<!-- End of Tittle -->
-					<div id="carouselExample" class="carousel">
-						<div class="carousel-inner">
-							<!-- Carousel Slide -->
-							<div class="carousel-item active" 
-							th:each="p : ${products}" 
-							th:if="${p.category == c.name}"
-							th:id="'carousel-item-' + ${p.id}" >
-								<!-- Product Card -->
-								<div class="card">
-									<div class="img-wrapper">
-										<img th:src="@{'/img/product_img/'+${p.image}}"  alt="...">
-									</div>
-									<div class="card-body">
-										<h5 class="card-title text-center" >[[${p.title}]]</h5>
-										<p class="card-text">
-											[[${p.description}]]
-										</p>
-										<div class="row text-center" style="justify-content: center;">
-											<a th:href="@{'/product/'+${p.id}}"
-												class="text-start btn col-md-5 offset-md-5 rounded-pill p-2" 
-												style="background: #E5882969;">
-												<span>
-													<b style="position:relative; left: 5%; font-family: 'Plus Jakarta Sans', sans-serif;">
-														[[${p.discountPrice}]] &#8363
-													</b>
-													<img style="position:relative; left: 20%;" src="/img/plusIcon.png" alt="icon">
-												</span> 
-											</a>
-										</div>
-									</div>
-								</div>
-								<!-- End of Product Card -->
+							<div class="cake-section">
+								<h1 class="main-title">
+								  	The Ideal <span class="highlight">Prepared</span><br>Cake Regular!
+								</h1>
+								<p class="description">
+								  	These cakes are made with butter or another fat, like vegetable shortening. <br>The common way is to mix the fat and sugar, then add eggs,<br>and then add flour.
+								</p>
 							</div>
-							<!-- End of Carousel Slide -->
+							<div class="">
+								<div class="col-auto">
+									<button class="btn-maincolor-home d-flex" onclick="window.location.href='/products'">
+										<p>Choose your musee</p>
+										<img src="/img/icon/9.svg" class="mx-1" alt="">
+									</button>
+								</div>
+							</div>
+							<hr>
+							<div>
+								<br>
+								<br>
+								<br>
+								<br>
+								<div class="row">
+									<div class="col-md-4">
+
+									</div>
+									<div class="col-md-4">
+
+									</div>
+
+									<!-- <div class="col-md-6">
+										<div>
+											<p>
+												Haven't any idea yet?<br>
+												(o^^)o you can choose yours here 
+											</p>
+										</div>
+										<button class="btn-subcolor-home d-flex" onclick="window.location.href='/products'">
+											<p>best selling</p>
+										</button>
+									</div> -->
+									<div class="col-md-4">
+										<div class="cute-message">
+											<p class="message-text">
+												Haven't any idea yet?<br>
+												(o^^)o you can choose yours here
+											</p>
+										</div>
+										<button class="btn-subcolor-home d-flex" onclick="window.location.href='/products'">
+											<p class="btn-text">Best Selling</p>
+										</button>
+									</div>
+									
+								</div>
+							</div>
 						</div>
-						<button class="carousel-control-prev" type="button" 
-							data-bs-target="#carouselExample" data-bs-slide="prev"
-							style="width: 50px">
-						  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						  <span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button" 
-							data-bs-target="#carouselExample" data-bs-slide="next"
-							style="width: 50px">
-						  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-						  <span class="visually-hidden">Next</span>
-						</button>
+					</div>
+					<div class="col-md-5">
+						<div class="">
+							<!-- <img src="img/bg-login.jpg" class="card-img-top" style="object-fit: cover; width: 100%; height: 580px;"> -->
+							<div class="shift1">
+								<img src="/img/icon/1.svg" alt="">
+
+							</div>
+							<div class="shift shift-top2">
+								<img src="/img/icon/2.svg" alt="">
+
+							</div>
+							
+							<div class="shift shift-top3">
+								<img src="/img/icon/3.svg" alt="">
+
+							</div>
+							<div class="shift shift-top4">
+								<img src="/img/icon/4.svg" alt="">
+
+							</div>
+									
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- End of Item Carousel -->
-		<!-- End Product Module -->
-		</div>
+			<!-- Các loại bánh phổ biến ở dưới  -->
+			<div class="card-sub-homepage">
+				<!-- <div class="shift shift-top5">
+					<img src="/img/icon/5.svg" alt="">
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+				<div class="footer-item col-md-3">
+					<img src="/img/icon/6.svg" alt="">
 
+						
+					<h4 class="m-2">Cake</h4>
+					<p>These cakes are <br> made with butter</p>
+				</div>
+				<div class="footer-item col-md-3">
+					<img src="/img/icon/7.svg" alt="">
+						
+					<h4 class="m-2">Cookies</h4>
+					<p>These Cookies another <br>fat, like vegetable</p>
+				</div>
+				<div class="footer-item col-md-3">
+					<img src="/img/icon/8.svg" alt="">
+						
+					<h4 class="m-2">Bread</h4>
+					<p>These Bread add eggs,<br>and then add flour</p>
+				</div> -->
+				
+				<div class="shift shift-top5">
+					<img src="/img/icon/5.svg" alt="">
+				</div>
+				<div class="col-md-2">
+					
+				</div>
+				<div class="col-md-2">
+					
+				</div>
+				<div class="col-md-2">
+					
+				</div>
+				<div class="footer-item col-md-2">
+					<img src="/img/icon/6.svg" alt="">
+
+						
+					<h4 class="m-2">Cake</h4>
+					<p>These cakes are <br> made with butter</p>
+				</div>
+				<div class="footer-item col-md-2">
+					<img src="/img/icon/7.svg" alt="">
+						
+					<h4 class="m-2">Cookies</h4>
+					<p>These Cookies another <br>fat, like vegetable</p>
+				</div>
+				<div class="footer-item col-md-2">
+					<img src="/img/icon/8.svg" alt="">
+						
+					<h4 class="m-2">Bread</h4>
+					<p>These Bread add eggs,<br>and then add flour</p>
+				</div>
+			</div>
+		</div>
 	</section>
 </body>
 </html>
