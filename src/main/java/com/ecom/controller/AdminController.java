@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.Principal;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -228,23 +227,18 @@ public class AdminController {
 	}
 
 	@GetMapping("/popularProducts")
-    public String getPopularProducts(Model model) {
-        // Lấy thời gian bắt đầu và kết thúc (1 tháng trước đến hiện tại)
-        LocalDateTime startDate = LocalDateTime.now().minusMonths(1);
-        LocalDateTime endDate = LocalDateTime.now();
-
-        // Gọi dịch vụ để lấy danh sách sản phẩm phổ biến
-        List<Product> popularProducts = productService.getPopularProducts(startDate, endDate);
-
-        // Kiểm tra và thêm vào model
-        if (popularProducts != null && !popularProducts.isEmpty()) {
-            model.addAttribute("popularProducts", popularProducts);
-        } else {
-            model.addAttribute("message", "No popular products found in the selected timeframe.");
-        }
-
-        return "admin/popularProducts"; // Tên file HTML để hiển thị danh sách
+public String getPopularProducts(Model model) {
+    List<Product> popularProducts = productService.getProductsSortedByOrderCount();
+    System.out.println("Popular products: " + popularProducts);
+    if (popularProducts != null && !popularProducts.isEmpty()) {
+        model.addAttribute("products", popularProducts);
+    } else {
+        model.addAttribute("message", "No popular products found.");
     }
+    return "admin/popularProducts";
+}
+
+	
 
 	@GetMapping("/products")
 	public String loadViewProduct(Model m, @RequestParam(defaultValue = "") String ch,
