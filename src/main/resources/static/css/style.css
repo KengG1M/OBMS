@@ -1,0 +1,390 @@
+@charset "ISO-8859-1";
+
+.card-sh {
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cat-div {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.error {
+	color: red;
+}
+
+.bg-red {
+    background-color: #F2360A; /* Bootstrap red */
+}
+
+.bg-cream {
+	background-color: #F9EADB !important;
+}
+
+.btn-red {
+	background-color: #F2360A; 
+	color: #ffffff; 
+  }
+  
+  .btn-red:hover {
+	background-color: #F9EADB;
+	color: #000000; 
+  }
+
+.btn-maincolor {
+	background-color: #F2360A; 
+	color: #ffffff; 
+	width: 100%;
+	height: 60px;
+	padding: 10px 20px;
+	font-size: 22px;
+	font-weight:100;
+	border-radius: 1px;
+	border-width: 1px;
+}
+  
+.btn-maincolor:hover {
+	background-color: #ffffff;
+	color: #000000; 
+}
+
+.btn-subcolor {
+	background-color: #f7ede49d; 
+	color: black; 
+	width: 50%;
+	height: 45px;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 100;
+	border-radius: 1px;
+	border-width: 1px;
+}
+  
+.btn-subcolor:hover {
+	background-color: #ffffff;
+	color: #000000; 
+}
+
+.form-control {
+	border: 2px solid black; /* Thay đổi màu viền */
+	border-radius: 1px; /* Bo góc */
+	border-width: 1px;
+	padding: 15px; /* Thêm padding bên trong ô nhập liệu */
+	font-size: 1rem; /* Thay đổi kích thước font chữ */
+	background-color: #f9f9f9; /* Thay đổi màu nền */
+  }
+  
+  .form-control:focus {
+	border-color: black; /* Màu viền khi ô nhập liệu được chọn (focus) */
+	box-shadow: 0 0 5px gray; /* Thêm hiệu ứng bóng đổ khi focus */
+  }
+  
+.red-radio:checked {
+    background-color: #F2360A; 
+    border-color: #F2360A; 
+}
+
+.red-radio:checked + .form-check-label {
+    color: #F2360A;
+}
+
+.bg-maincolor{
+	color: #F2360A;
+}
+
+.bg-subcolor{
+	color: #E58829;
+}
+
+.font-pacifico{
+	font-family: 'Pacifico', cursive;
+    color: #d87f4b;
+}
+
+.fc-maincolor{
+	color: #F2360A;
+}
+
+.fc-subcolor{
+	color: #E58829;
+}
+
+.fc-red{
+	color: #F2360A;
+}
+
+.text-link{
+	color: black;
+	text-decoration: none;
+}
+
+.text-link:hover{
+	color: #E58829;
+	text-decoration: underline;
+}
+
+.fs-note{
+	color:darkgray;
+	font-size:14px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+	font-weight: 500;
+}
+
+.card-header {
+	background-color: #f8f9fa; /* Đặt màu nền là trắng */
+	color: #000; /* Nếu muốn thay đổi màu chữ, có thể thêm dòng này */
+}
+  
+.card-footer {
+	background-color: #f8f9fa; /* Đặt màu nền là trắng */
+	color: #000; /* Nếu muốn thay đổi màu chữ, có thể thêm dòng này */
+}
+
+/* Offcanvas from the left (default) */
+.offcanvas.offcanvas-start {
+    position: fixed;
+    top: 1000;
+    left: 1000;
+    width: 100;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper{
+    max-width: 100%;
+    height: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 20px;
+}
+img{
+	max-width:100%;
+	max-height:100%;
+}
+@media screen and (min-width:576px){
+    .carousel-inner{
+        display: flex;
+    }
+    .carousel-item{
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100%/3);
+    }
+}
+
+.carousel-inner{
+    padding: 1em;
+}
+.card{
+    margin: 0 .5em;
+}
+
+.custom-link {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+}
+
+.custom-link:hover,
+.custom-link:focus,
+.custom-link:active {
+    outline: none; /* Remove the focus outline */
+    color: inherit; /* Maintain the color on interaction */
+    text-decoration: none; /* Maintain no underline */
+}
+
+.card-navspace{
+	width: 100%;
+	height: 5%;
+}
+
+.card-main-homepage{
+	width: 100%;
+	height: 65%;
+	background-color: rgb(252, 252, 252);
+}
+
+.card-sub-homepage{
+	width: 100%;
+	height: 25%;
+
+	background-color: #E58829;
+	background-color: #ffffff;
+
+	display: flex;
+    justify-content: flex-start;
+	padding-right: 80px;
+}
+
+.card-footspace-homepage {
+	width: 100%;
+	height: 5%;
+}
+/* Homepage  */
+
+.btn-subcolor-home {
+	background-color: #fff; 
+	color: black; 
+	width: fit-content;
+	height: 40px;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 100;
+	border-radius: 4px;
+	border-width: 1px;
+}
+  
+.btn-subcolor-home:hover {
+	background-color: rgb(241, 241, 241);
+	color: #000000; 
+}
+
+.btn-maincolor-home {
+	background-color: #F2360A; 
+	color: #ffffff; 
+	width: fit-content;
+	height: 40px;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight:100;
+	border-radius: 4px;
+	border-width: 1px;
+
+	margin: 0 0 0 20px;
+	text-align: center;
+	
+}
+  
+.btn-maincolor-home:hover {
+	background-color: #ffffff;
+	color: #000000; 
+}
+
+.footer-item {
+    text-align: end;
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-item h4 {
+    font-size: 1.2rem;
+    color: #2b2b2b;
+}
+
+.footer-item p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.footer-item img {
+    width: 60px;
+    height: auto;
+    margin: 10px 0;
+}
+
+.shift {
+	position: absolute; /* Đặt hình ảnh ở vị trí tuyệt đối so với container */
+}
+
+.shift1 {
+    display: flex;
+    justify-content: flex-end; /* Đẩy phần tử về phía bên phải */
+    align-items: center; /* Căn giữa phần tử theo chiều dọc */
+}
+
+.shift-top2 {
+	bottom: 750px; 
+
+}
+
+.shift-top3 {
+	bottom: 300px; /* Đặt hình ảnh ở vị trí tuyệt đối so với container */
+	right: 300px;
+}
+.shift-top4 {
+	bottom: 310px; /* Đặt hình ảnh ở vị trí tuyệt đối so với container */
+	right: 300px;
+}
+
+.shift-top5 {
+	bottom: 40px;
+}
+
+.cake-section {
+	text-align: start; /* Căn giữa nội dung */
+	margin: 20px;
+  }
+  
+  .main-title {
+	font-size: 3rem; /* Kích thước chữ */
+	font-weight: bold; /* Chữ đậm */
+	line-height: 1.2; /* Khoảng cách dòng */
+	color: #243A2C; /* Màu xanh đậm cho tiêu đề */
+  }
+  
+  .main-title .highlight {
+	color: #E43D30; /* Màu đỏ cho chữ "Prepared" */
+	text-decoration: underline; /* Gạch dưới */
+	text-decoration-thickness: 4px; /* Độ dày của gạch dưới */
+	text-decoration-color: #E43D30; /* Màu của gạch dưới */
+  }
+  
+  .description {
+	font-size: 1rem; /* Kích thước chữ đoạn văn */
+	line-height: 1.6; /* Khoảng cách dòng đoạn văn */
+	color: #46594C; /* Màu xám đậm cho đoạn văn */
+	margin-top: 10px;
+	margin-bottom: 0;
+  }
+  
+/* Cung cấp phông chữ dễ thương */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Lobster&display=swap');
+
+/* Chỉnh sửa phần văn bản */
+.cute-message .message-text {
+    font-family: 'Lobster', cursive; 
+    color: #ff6f61;  /* Màu đỏ pastel */
+    font-size: 14px;  /* Cỡ chữ vừa phải */
+    text-align: start;
+    /* line-height: 1.5; */
+    margin-bottom: 20px;
+}
+
+/* Chỉnh sửa nút bấm */
+.btn-subcolor-home {
+    /* display: inline-flex; */
+    width: fit-content;
+	text-align: center;
+    background-color: #ff6f61;  /* Màu hồng tươi */
+    color: white;
+    /* padding: 12px 30px; */
+    border: none;
+    border-radius: 30px;  /* Nút bấm tròn trịa */
+    font-family: 'Lobster', cursive; 
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng hover cho nút bấm */
+.btn-subcolor-home:hover {
+    background-color: #ff9a8b; /* Màu hồng nhạt khi hover */
+    transform: scale(1.05);  /* Tăng kích thước một chút khi hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Đổ bóng đẹp */
+}
+
+/* Thêm biểu tượng dễ thương (icon) vào nút bấm */
+.btn-subcolor-home .btn-text {
+    display: inline-block;
+}
+
+/* Thêm hiệu ứng cho các phần tử khác */
+.cute-message p {
+    font-family: 'Lobster', cursive; 
+    color: #ff6f61;
+}
+

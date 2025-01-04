@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bake Onl</title>
+
+</head>
+<body >
+	
+	<section class="container" style="height: 100vh;">
+		<div class="d-flex flex-column pt-5" style="height: 100%;">
+
+			<div class="card-navspace">
+
+			</div>
+			<!-- chữ chính và hình chính ở giữa  -->
+			<div class="card-main-homepage p-3 d-flex">
+				<div class="row">
+					<div class="col-md-7">
+						<br>
+						<div class="">
+							<div class="cake-section">
+								<h1 class="main-title">
+								  	The Ideal <span class="highlight">Prepared</span><br>Cake Regular!
+								</h1>
+								<p class="description">
+								  	These cakes are made with butter or another fat, like vegetable shortening. <br>The common way is to mix the fat and sugar, then add eggs,<br>and then add flour.
+								</p>
+							</div>
+							<div class="">
+								<div class="col-auto">
+									<button class="btn-maincolor-home d-flex" onclick="window.location.href='/products'">
+										<p>Choose your musee</p>
+										<img src="/img/icon/9.svg" class="mx-1" alt="">
+									</button>
+								</div>
+							</div>
+							<hr>
+							<div>
+								<br>
+								<br>
+								<br>
+								<br>
+								<div class="row">
+									<div class="col-md-4">
+
+									</div>
+									<div class="col-md-4">
+
+									</div>
+
+									<!-- <div class="col-md-6">
+										<div>
+											<p>
+												Haven't any idea yet?<br>
+												(o^^)o you can choose yours here 
+											</p>
+										</div>
+										<button class="btn-subcolor-home d-flex" onclick="window.location.href='/products'">
+											<p>best selling</p>
+										</button>
+									</div> -->
+									<div class="col-md-4">
+										<div class="cute-message">
+											<p class="message-text">
+												Haven't any idea yet?<br>
+												(o^^)o you can choose yours here
+											</p>
+										</div>
+
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="">
+							<!-- <img src="img/bg-login.jpg" class="card-img-top" style="object-fit: cover; width: 100%; height: 580px;"> -->
+							<div class="shift1">
+								<img src="/img/icon/1.svg" alt="">
+
+							</div>
+							<div class="shift shift-top2">
+								<img src="/img/icon/2.svg" alt="">
+
+							</div>
+							
+							<div class="shift shift-top3">
+								<img src="/img/icon/3.svg" alt="">
+
+							</div>
+							<div class="shift shift-top4">
+								<img src="/img/icon/4.svg" alt="">
+
+							</div>
+									
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="card-sub-homepage" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+				<div class="footer-item col-md-2" style="text-align: center;">
+					<img src="/img/icon/6.svg" alt="">
+					<h4 class="m-2">Cake</h4>
+					<p>These cakes are <br> made with butter</p>
+				</div>
+				<div class="footer-item col-md-2" style="text-align: center;">
+					<img src="/img/icon/7.svg" alt="">
+					<h4 class="m-2">Cookies</h4>
+					<p>These Cookies another <br>fat, like vegetable</p>
+				</div>
+				<div class="footer-item col-md-2" style="text-align: center;">
+					<img src="/img/icon/8.svg" alt="">
+					<h4 class="m-2">Bread</h4>
+					<p>These Bread add eggs,<br>and then add flour</p>
+				</div>
+			</div>
+			
+			<br><br><br><br>
+			<div style="display: flex; justify-content: flex-end; padding: 20px;">
+				<button class="btn-maincolor-home d-flex" onclick="window.location.href='/products'">
+					<br><br><br><br>
+					<p class="btn-text">View Best Selling - Discover Our Most Popular Products!</p>
+				</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
