@@ -8,25 +8,8 @@
 <body>
 	<section>
 	
-		<div class="container-fluid bg-danger p-4" style="margin-top: 5em;">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<form action="/products" method="get">
-						<div class="input-group">
-							<input type="text" class="form-control" name="ch">
-							<button class="btn btn-light text-dark ms-3 col-md-2">
-								<i class="fa-solid fa-magnifying-glass"></i> 
-								Search
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-		</div>
-
-
-		<div class="container-fluid mt-1">
+		<!-- <div class="container-fluid p-4" style="margin-top: 5em;">	</div> -->
+		<div class="container-fluid mt" style="margin-top:100px">
 			<div class="row">
 				<!-- Sidebar - Categories -->
 				<div class="col-md-2 p-0">
@@ -65,7 +48,33 @@
 				<div class="col-md-10 ">
 					<div class="card " style="background-color: #FFF6EC;">
 						<div class="card-body">
-							<p class="fs-3 text-center" style="font-family: 'Playfair Display', serif;"><b>Products</b></p>
+							<form action="/products" method="get" role="search" style="position: relative;" class="d-flex justify-content-center">
+								<div class="search-container" 
+									style="position: relative; width:100%; display: flex; justify-content: center;">
+									<!-- Best Selling Button -->
+									<a class="btn btn-danger rounded-4 px-8" 
+										href="/"
+										style="padding-top: 2%;
+										position: relative; width: 10%; height: 90%;">
+										Best Selling
+									</a>
+									<!-- End of Best Selling -->
+									<!-- Search Bar -->
+									<input class="form-control rounded-pill p-3 m-3 w-75"
+										name="ch"
+										type="search" 
+										placeholder="Search"
+										aria-label="Search"
+										style="background: #e6e6e6; padding-left: 40px; text-indent: 40px;"> <!-- Added padding-left to create space for the icon -->
+									<i class="fas fa-search"
+									style="position: relative; right: 74%; top:90%; transform: translateY(-50%); color: #888;">
+									</i>
+									<!-- End of Search Bar -->
+								</div>
+							</form>
+							
+						
+							<!-- <p class="fs-3 text-center" style="font-family: 'Playfair Display', serif;"><b>Products</b></p> -->
 							<div class="row">
 								<th:block th:if="${productsSize > 0}">
 									<!-- Loop through each product -->

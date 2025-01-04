@@ -50,5 +50,13 @@ public class Product {
     private String name;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<OrderCount> orderCount = new ArrayList<>();
+    private List<ProductOrder> productOrders = new ArrayList<>();
+
+    // Số lượng đơn hàng cho sản phẩm này
+    private int orderCount;
+
+    public void incrementOrderCount() {
+        this.orderCount++;
+    }
 }
+
