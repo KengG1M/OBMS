@@ -5,9 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -19,7 +18,6 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ecom.model.Product;
-import com.ecom.repository.OrderRepository;
 import com.ecom.repository.ProductRepository;
 import com.ecom.service.ProductService;
 
@@ -64,9 +62,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product updateProduct(Product product, MultipartFile image) {
-
 		Product dbProduct = getProductById(product.getId());
-
 		String imageName = image.isEmpty() ? dbProduct.getImage() : image.getOriginalFilename();
 
 		dbProduct.setTitle(product.getTitle());
@@ -78,7 +74,6 @@ public class ProductServiceImpl implements ProductService {
 		dbProduct.setIsActive(product.getIsActive());
 		dbProduct.setDiscount(product.getDiscount());
 
-		// 5=100*(5/100); 100-5=95
 		Double disocunt = product.getPrice() * (product.getDiscount() / 100.0);
 		Double discountPrice = product.getPrice() - disocunt;
 		dbProduct.setDiscountPrice(discountPrice);
@@ -86,16 +81,12 @@ public class ProductServiceImpl implements ProductService {
 		Product updateProduct = productRepository.save(dbProduct);
 
 		if (!ObjectUtils.isEmpty(updateProduct)) {
-
 			if (!image.isEmpty()) {
-
 				try {
 					File saveFile = new ClassPathResource("static/img").getFile();
-
 					Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + "product_img" + File.separator
 							+ image.getOriginalFilename());
 					Files.copy(image.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
-
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -130,7 +121,6 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Page<Product> getAllActiveProductPagination(Integer pageNo, Integer pageSize, String category) {
-
 		Pageable pageable = PageRequest.of(pageNo, pageSize);
 		Page<Product> pageProduct = null;
 
@@ -144,30 +134,20 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Page<Product> searchActiveProductPagination(Integer pageNo, Integer pageSize, String category, String ch) {
-
 		Page<Product> pageProduct = null;
 		Pageable pageable = PageRequest.of(pageNo, pageSize);
 
 		pageProduct = productRepository.findByisActiveTrueAndTitleContainingIgnoreCaseOrCategoryContainingIgnoreCase(ch,
 				ch, pageable);
 
-//		if (ObjectUtils.isEmpty(category)) {
-//			pageProduct = productRepository.findByIsActiveTrue(pageable);
-//		} else {
-//			pageProduct = productRepository.findByCategory(pageable, category);
-//		}
 		return pageProduct;
 	}
 
-	@Autowired
-    private OrderRepository orderRepository;
 	@Override
-    public List<Product> getPopularProducts(LocalDateTime startDate, LocalDateTime endDate) {
-        List<Object[]> result = orderRepository.findPopularProducts(startDate, endDate);
+	public List<Product> getProductsSortedByOrderCount() {
+		List<Product> products = productRepository.findAll();
+		products.sort(Comparator.comparingInt(Product::getOrderCount).reversed());
 
-        return result.stream()
-                     .map(obj -> (Product) obj[0]) 
-                     .collect(Collectors.toList());
-    }
-
+		return products;
+	}
 }
